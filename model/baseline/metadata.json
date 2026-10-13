@@ -1,0 +1,24 @@
+{
+  "model": "TF-IDF + Logistic Regression",
+  "labels": [
+    "Low",
+    "Medium",
+    "High"
+  ],
+  "C": 8.0,
+  "class_weight": "balanced",
+  "ngram_range": [
+    1,
+    2
+  ],
+  "max_features": 30000,
+  "min_df": 2,
+  "char_ngrams": false,
+  "vocabulary_size": 30000,
+  "train_size": 5346,
+  "val_size": 1170,
+  "test_size": 1158,
+  "random_seed": 42,
+  "training_time_seconds": 3.3,
+  "test_macro_f1": 0.6351
+}

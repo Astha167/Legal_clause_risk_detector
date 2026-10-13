@@ -1,0 +1,83 @@
+{
+  "n_clause_instances": 8683,
+  "n_contracts_with_clauses": 475,
+  "n_categories": 36,
+  "length": {
+    "chars": {
+      "mean": 384.1,
+      "min": 12,
+      "max": 4218,
+      "median": 302.0
+    },
+    "words": {
+      "mean": 60.9,
+      "min": 2,
+      "max": 706,
+      "median": 48.0
+    },
+    "tokens": {
+      "mean": 72.2,
+      "max": 812,
+      "source": "spaCy tokenizer"
+    },
+    "short_threshold_words": 3,
+    "long_threshold_words": 141,
+    "n_unusually_short": 1,
+    "n_unusually_long": 468,
+    "note": "Long clauses are kept; the transformer truncates at MAX_LENGTH tokens."
+  },
+  "duplicates": {
+    "rows_sharing_text_with_another_row": 1844,
+    "texts_appearing_in_multiple_contracts": 74,
+    "leakage_note": "Identical boilerplate can appear in several contracts. The contract-level split prevents same-contract leakage; cross-contract exact duplicates that land in validation/test are flagged in split_assignments and excluded from evaluation.",
+    "near_duplicates": {
+      "threshold": 0.95,
+      "near_duplicate_pairs_across_contracts": 24,
+      "unique_texts_compared": 7667
+    }
+  },
+  "category_distribution": {
+    "License Grant": 716,
+    "Cap On Liability": 632,
+    "Audit Rights": 613,
+    "Anti-Assignment": 612,
+    "Insurance": 531,
+    "Governing Law": 457,
+    "Post-Termination Services": 409,
+    "Revenue/Profit Sharing": 395,
+    "Minimum Commitment": 392,
+    "Exclusivity": 388,
+    "Rofr/Rofo/Rofn": 350,
+    "Ip Ownership Assignment": 296,
+    "Non-Transferable License": 282,
+    "Non-Compete": 226,
+    "Termination For Convenience": 223,
+    "Change Of Control": 213,
+    "Renewal Term": 199,
+    "Volume Restriction": 165,
+    "Warranty Duration": 164,
+    "Covenant Not To Sue": 159,
+    "Uncapped Liability": 151,
+    "Irrevocable Or Perpetual License": 150,
+    "Notice Period To Terminate Renewal": 117,
+    "Competitive Restriction Exception": 114,
+    "Liquidated Damages": 113,
+    "Affiliate License-Licensee": 104,
+    "Joint Ip Ownership": 100,
+    "No-Solicit Of Employees": 75,
+    "Source Code Escrow": 63,
+    "Non-Disparagement": 54,
+    "Affiliate License-Licensor": 47,
+    "No-Solicit Of Customers": 45,
+    "Third Party Beneficiary": 39,
+    "Most Favored Nation": 36,
+    "Unlimited/All-You-Can-Eat-License": 27,
+    "Price Restrictions": 26
+  },
+  "skipped": {
+    "empty_list": 13950,
+    "no_answer_with_context": 0,
+    "empty_text_after_cleaning": 0,
+    "exact_duplicates_removed": 0
+  }
+}

@@ -1,0 +1,22 @@
+# LegalRisk AI - tested with Python 3.12. Python 3.10-3.12 is recommended on Windows.
+# Python 3.13/3.14 also run the app; gensim (optional Word2Vec experiment only) is skipped there
+# automatically because it has no pre-built Windows wheel and would need C++ Build Tools.
+# For an NVIDIA GPU, install the CUDA build of PyTorch FIRST, e.g.:
+#   pip install torch --index-url https://download.pytorch.org/whl/cu121
+streamlit>=1.48
+pandas>=2.0
+numpy>=1.24
+scipy>=1.10
+torch>=2.1
+transformers>=4.40
+scikit-learn>=1.3
+joblib>=1.3
+spacy>=3.7,<4.0
+nltk>=3.8
+shap>=0.44
+pymupdf>=1.24
+plotly>=5.18
+reportlab>=4.0
+gensim>=4.3; python_version < "3.13"   # optional: training/train_word2vec.py only
+matplotlib>=3.7
+pytest>=7.0

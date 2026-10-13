@@ -1,0 +1,23 @@
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+logs/
+*.log
+.env
+.env.*
+secrets.toml
+.streamlit/secrets.toml
+# trained transformer weights are large - regenerate locally
+model/contracts_bert_risk/*
+!model/contracts_bert_risk/.gitkeep
+model/_smoke_test/
+reports/model_evaluation/archive/
+reports/model_evaluation/smoke_test/
+uploads/
+*.tmp
+.DS_Store
+Thumbs.db
+scratch*.txt

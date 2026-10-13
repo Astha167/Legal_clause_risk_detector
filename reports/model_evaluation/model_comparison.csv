@@ -1,0 +1,4 @@
+Model,Representation,Accuracy,Precision,Recall,Macro F1,Weighted F1
+TF-IDF + Logistic Regression,TF-IDF,0.7927,0.6573,0.6191,0.6351,0.7875
+Word2Vec + Logistic Regression,Word2Vec,0.5449,0.4461,0.4834,0.4262,0.5954
+Contracts-BERT,contextual embeddings,0.7418,0.572,0.6091,0.586,0.7531

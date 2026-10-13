@@ -1,0 +1,251 @@
+{
+  "n_clauses": 8683,
+  "distribution": {
+    "Low": 5684,
+    "Medium": 2350,
+    "High": 649
+  },
+  "imbalance_note": "Largest/smallest class ratio = 8.76. Classes are imbalanced; class-weighted loss is used during training.",
+  "thresholds": {
+    "low_max": 1,
+    "high_min": 4
+  },
+  "categories_with_mixed_labels": 36,
+  "per_category": {
+    "Affiliate License-Licensee": {
+      "Low": 49,
+      "Medium": 42,
+      "High": 13
+    },
+    "Affiliate License-Licensor": {
+      "Low": 12,
+      "Medium": 19,
+      "High": 16
+    },
+    "Anti-Assignment": {
+      "Low": 383,
+      "Medium": 198,
+      "High": 31
+    },
+    "Audit Rights": {
+      "Low": 552,
+      "Medium": 57,
+      "High": 4
+    },
+    "Cap On Liability": {
+      "Low": 526,
+      "Medium": 92,
+      "High": 14
+    },
+    "Change Of Control": {
+      "Low": 99,
+      "Medium": 89,
+      "High": 25
+    },
+    "Competitive Restriction Exception": {
+      "Low": 63,
+      "Medium": 36,
+      "High": 15
+    },
+    "Covenant Not To Sue": {
+      "Low": 114,
+      "Medium": 40,
+      "High": 5
+    },
+    "Exclusivity": {
+      "Low": 79,
+      "Medium": 254,
+      "High": 55
+    },
+    "Governing Law": {
+      "Low": 433,
+      "Medium": 24,
+      "High": 0
+    },
+    "Insurance": {
+      "Low": 344,
+      "Medium": 153,
+      "High": 34
+    },
+    "Ip Ownership Assignment": {
+      "Low": 169,
+      "Medium": 109,
+      "High": 18
+    },
+    "Irrevocable Or Perpetual License": {
+      "Low": 10,
+      "Medium": 97,
+      "High": 43
+    },
+    "Joint Ip Ownership": {
+      "Low": 85,
+      "Medium": 15,
+      "High": 0
+    },
+    "License Grant": {
+      "Low": 365,
+      "Medium": 266,
+      "High": 85
+    },
+    "Liquidated Damages": {
+      "Low": 18,
+      "Medium": 50,
+      "High": 45
+    },
+    "Minimum Commitment": {
+      "Low": 271,
+      "Medium": 84,
+      "High": 37
+    },
+    "Most Favored Nation": {
+      "Low": 28,
+      "Medium": 8,
+      "High": 0
+    },
+    "No-Solicit Of Customers": {
+      "Low": 25,
+      "Medium": 10,
+      "High": 10
+    },
+    "No-Solicit Of Employees": {
+      "Low": 38,
+      "Medium": 16,
+      "High": 21
+    },
+    "Non-Compete": {
+      "Low": 136,
+      "Medium": 54,
+      "High": 36
+    },
+    "Non-Disparagement": {
+      "Low": 26,
+      "Medium": 25,
+      "High": 3
+    },
+    "Non-Transferable License": {
+      "Low": 116,
+      "Medium": 117,
+      "High": 49
+    },
+    "Notice Period To Terminate Renewal": {
+      "Low": 67,
+      "Medium": 47,
+      "High": 3
+    },
+    "Post-Termination Services": {
+      "Low": 291,
+      "Medium": 98,
+      "High": 20
+    },
+    "Price Restrictions": {
+      "Low": 24,
+      "Medium": 2,
+      "High": 0
+    },
+    "Renewal Term": {
+      "Low": 110,
+      "Medium": 78,
+      "High": 11
+    },
+    "Revenue/Profit Sharing": {
+      "Low": 341,
+      "Medium": 46,
+      "High": 8
+    },
+    "Rofr/Rofo/Rofn": {
+      "Low": 225,
+      "Medium": 111,
+      "High": 14
+    },
+    "Source Code Escrow": {
+      "Low": 54,
+      "Medium": 8,
+      "High": 1
+    },
+    "Termination For Convenience": {
+      "Low": 154,
+      "Medium": 51,
+      "High": 18
+    },
+    "Third Party Beneficiary": {
+      "Low": 33,
+      "Medium": 6,
+      "High": 0
+    },
+    "Uncapped Liability": {
+      "Low": 108,
+      "Medium": 29,
+      "High": 14
+    },
+    "Unlimited/All-You-Can-Eat-License": {
+      "Low": 18,
+      "Medium": 8,
+      "High": 1
+    },
+    "Volume Restriction": {
+      "Low": 156,
+      "Medium": 9,
+      "High": 0
+    },
+    "Warranty Duration": {
+      "Low": 162,
+      "Medium": 2,
+      "High": 0
+    }
+  },
+  "factor_frequency": {
+    "Ongoing payment / revenue share": 804,
+    "Exclusivity": 778,
+    "Post-termination obligation": 661,
+    "Insurance requirement": 520,
+    "Broad territorial scope": 487,
+    "Assignment restriction": 477,
+    "Perpetual or irrevocable": 445,
+    "Non-transferable rights": 422,
+    "Audit / inspection rights": 397,
+    "Specific monetary amount": 340,
+    "Termination without cause": 208,
+    "Automatic renewal": 198,
+    "Change-of-control trigger": 196,
+    "Indemnification obligation": 191,
+    "Large monetary amount": 183,
+    "Minimum commitment": 134,
+    "Costs placed on one party": 129,
+    "Sole discretion": 114,
+    "IP ownership transfer": 111,
+    "Business activity restriction": 109,
+    "Long-term commitment": 109,
+    "Exception to liability limits": 96,
+    "Non-compete restriction": 93,
+    "Right of first refusal / offer": 76,
+    "Non-solicitation": 74,
+    "Liquidated damages": 68,
+    "Cancellation fee or forfeiture": 66,
+    "Immediate termination": 64,
+    "Joint IP ownership": 56,
+    "Broad 'any and all' scope": 46,
+    "Penalty": 42,
+    "Long-duration restriction": 42,
+    "Waiver / covenant not to sue": 38,
+    "Restriction duration": 31,
+    "Third-party rights": 31,
+    "Non-disparagement": 30,
+    "Responsibility for all costs": 22,
+    "Most-favoured terms": 21,
+    "Volume or usage limit": 10,
+    "Survives termination": 8,
+    "Interest or late charges": 3,
+    "Uncapped liability": 1,
+    "Price restriction": 1
+  },
+  "score_stats": {
+    "count": 8683.0,
+    "mean": 1.18,
+    "std": 1.43,
+    "min": 0.0,
+    "25%": 0.0,
+    "50%": 1.0,
+    "75%": 2.0,
+    "max": 11.0
+  }
+}

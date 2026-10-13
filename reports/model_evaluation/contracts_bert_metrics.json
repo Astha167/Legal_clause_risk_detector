@@ -1,0 +1,247 @@
+{
+  "model": "Contracts-BERT",
+  "representation": "contextual embeddings",
+  "evaluated_on": "test split (contract-level, untouched during training)",
+  "timestamp": "2026-10-07T12:12:02",
+  "test": {
+    "accuracy": 0.7418,
+    "precision_macro": 0.572,
+    "recall_macro": 0.6091,
+    "f1_macro": 0.586,
+    "f1_weighted": 0.7531,
+    "classification_report": {
+      "Low": {
+        "precision": 0.9017735334242838,
+        "recall": 0.8293601003764115,
+        "f1-score": 0.8640522875816994,
+        "support": 797.0
+      },
+      "Medium": {
+        "precision": 0.5201238390092879,
+        "recall": 0.5813148788927336,
+        "f1-score": 0.5490196078431373,
+        "support": 289.0
+      },
+      "High": {
+        "precision": 0.29411764705882354,
+        "recall": 0.4166666666666667,
+        "f1-score": 0.3448275862068966,
+        "support": 72.0
+      },
+      "accuracy": 0.7417962003454232,
+      "macro avg": {
+        "precision": 0.5720050064974651,
+        "recall": 0.6091138819786039,
+        "f1-score": 0.5859664938772444,
+        "support": 1158.0
+      },
+      "weighted avg": {
+        "precision": 0.7687441849750205,
+        "recall": 0.7417962003454232,
+        "f1-score": 0.7531467409984263,
+        "support": 1158.0
+      }
+    },
+    "confusion_matrix": [
+      [
+        661,
+        119,
+        17
+      ],
+      [
+        66,
+        168,
+        55
+      ],
+      [
+        6,
+        36,
+        30
+      ]
+    ]
+  },
+  "validation": {
+    "accuracy": 0.7487,
+    "precision_macro": 0.6058,
+    "recall_macro": 0.6582,
+    "f1_macro": 0.6256,
+    "f1_weighted": 0.7599,
+    "classification_report": {
+      "Low": {
+        "precision": 0.9030470914127424,
+        "recall": 0.8129675810473815,
+        "f1-score": 0.8556430446194225,
+        "support": 802.0
+      },
+      "Medium": {
+        "precision": 0.5327635327635327,
+        "recall": 0.6254180602006689,
+        "f1-score": 0.5753846153846154,
+        "support": 299.0
+      },
+      "High": {
+        "precision": 0.38144329896907214,
+        "recall": 0.5362318840579711,
+        "f1-score": 0.4457831325301205,
+        "support": 69.0
+      },
+      "accuracy": 0.7487179487179487,
+      "macro avg": {
+        "precision": 0.6057513077151158,
+        "recall": 0.6582058417686739,
+        "f1-score": 0.6256035975113862,
+        "support": 1170.0
+      },
+      "weighted avg": {
+        "precision": 0.7776578215710955,
+        "recall": 0.7487179487179487,
+        "f1-score": 0.7598502204524403,
+        "support": 1170.0
+      }
+    },
+    "confusion_matrix": [
+      [
+        652,
+        133,
+        17
+      ],
+      [
+        69,
+        187,
+        43
+      ],
+      [
+        1,
+        31,
+        37
+      ]
+    ]
+  },
+  "model_dir": "model\\contracts_bert_risk",
+  "training_metadata": {
+    "model_name": "nlpaueb/bert-base-uncased-contracts",
+    "smoke_test": false,
+    "trained_at": "2026-10-06T22:46:35",
+    "device": "cpu",
+    "hyperparameters": {
+      "max_length": 128,
+      "batch_size": 8,
+      "learning_rate": 2e-05,
+      "epochs_requested": 2,
+      "weight_decay": 0.01,
+      "warmup_ratio": 0.1,
+      "early_stopping_patience": 2,
+      "class_weights": [
+        0.4829,
+        1.348,
+        5.3353
+      ],
+      "random_seed": 42,
+      "freeze_layers": 6,
+      "group_by_length": true,
+      "cpu_fast_preset": true
+    },
+    "dataset": {
+      "train_size": 5346,
+      "val_size": 1170,
+      "test_size": 1158,
+      "input": "clause_text (clean original legal text)",
+      "split": "contract-level"
+    },
+    "best_epoch": 2,
+    "best_val_macro_f1": 0.6256,
+    "best_val_metrics": {
+      "accuracy": 0.7487,
+      "precision_macro": 0.6058,
+      "recall_macro": 0.6582,
+      "f1_macro": 0.6256,
+      "f1_weighted": 0.7599,
+      "classification_report": {
+        "Low": {
+          "precision": 0.9030470914127424,
+          "recall": 0.8129675810473815,
+          "f1-score": 0.8556430446194225,
+          "support": 802.0
+        },
+        "Medium": {
+          "precision": 0.5327635327635327,
+          "recall": 0.6254180602006689,
+          "f1-score": 0.5753846153846154,
+          "support": 299.0
+        },
+        "High": {
+          "precision": 0.38144329896907214,
+          "recall": 0.5362318840579711,
+          "f1-score": 0.4457831325301205,
+          "support": 69.0
+        },
+        "accuracy": 0.7487179487179487,
+        "macro avg": {
+          "precision": 0.6057513077151158,
+          "recall": 0.6582058417686739,
+          "f1-score": 0.6256035975113862,
+          "support": 1170.0
+        },
+        "weighted avg": {
+          "precision": 0.7776578215710955,
+          "recall": 0.7487179487179487,
+          "f1-score": 0.7598502204524403,
+          "support": 1170.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          652,
+          133,
+          17
+        ],
+        [
+          69,
+          187,
+          43
+        ],
+        [
+          1,
+          31,
+          37
+        ]
+      ]
+    },
+    "history": [
+      {
+        "epoch": 1,
+        "train_loss": 0.9772,
+        "val_macro_f1": 0.532,
+        "val_accuracy": 0.706
+      },
+      {
+        "epoch": 2,
+        "train_loss": 0.7112,
+        "val_macro_f1": 0.6256,
+        "val_accuracy": 0.7487
+      }
+    ],
+    "training_time_seconds": 9185.1
+  },
+  "split_info": {
+    "within_split_duplicates_removed": {
+      "train": 712,
+      "val": 136,
+      "test": 144
+    },
+    "cross_split_duplicates_removed": {
+      "val": 11,
+      "test": 6
+    },
+    "contract_overlap": {
+      "train_val": 0,
+      "train_test": 0,
+      "val_test": 0
+    },
+    "sizes": {
+      "train": 5346,
+      "val": 1170,
+      "test": 1158
+    }
+  }
+}

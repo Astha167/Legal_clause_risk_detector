@@ -1,0 +1,165 @@
+{
+  "model": "TF-IDF + Logistic Regression",
+  "representation": "TF-IDF",
+  "evaluated_on": "test split (contract-level, untouched during training)",
+  "timestamp": "2026-09-28T05:09:10",
+  "test": {
+    "accuracy": 0.7927,
+    "precision_macro": 0.6573,
+    "recall_macro": 0.6191,
+    "f1_macro": 0.6351,
+    "f1_weighted": 0.7875,
+    "classification_report": {
+      "Low": {
+        "precision": 0.8707729468599034,
+        "recall": 0.904642409033877,
+        "f1-score": 0.8873846153846154,
+        "support": 797.0
+      },
+      "Medium": {
+        "precision": 0.6195652173913043,
+        "recall": 0.5916955017301038,
+        "f1-score": 0.6053097345132743,
+        "support": 289.0
+      },
+      "High": {
+        "precision": 0.48148148148148145,
+        "recall": 0.3611111111111111,
+        "f1-score": 0.4126984126984127,
+        "support": 72.0
+      },
+      "accuracy": 0.7927461139896373,
+      "macro avg": {
+        "precision": 0.6572732152442297,
+        "recall": 0.619149673958364,
+        "f1-score": 0.6351309208654342,
+        "support": 1158.0
+      },
+      "weighted avg": {
+        "precision": 0.7838748300000833,
+        "recall": 0.7927461139896373,
+        "f1-score": 0.7874735211141283,
+        "support": 1158.0
+      }
+    },
+    "confusion_matrix": [
+      [
+        721,
+        64,
+        12
+      ],
+      [
+        102,
+        171,
+        16
+      ],
+      [
+        5,
+        41,
+        26
+      ]
+    ]
+  },
+  "validation": {
+    "accuracy": 0.7803,
+    "precision_macro": 0.6574,
+    "recall_macro": 0.6343,
+    "f1_macro": 0.6448,
+    "f1_weighted": 0.7778,
+    "classification_report": {
+      "Low": {
+        "precision": 0.8644688644688645,
+        "recall": 0.8827930174563591,
+        "f1-score": 0.8735348550277606,
+        "support": 802.0
+      },
+      "Medium": {
+        "precision": 0.5993150684931506,
+        "recall": 0.5852842809364549,
+        "f1-score": 0.5922165820642978,
+        "support": 299.0
+      },
+      "High": {
+        "precision": 0.5084745762711864,
+        "recall": 0.43478260869565216,
+        "f1-score": 0.46875,
+        "support": 69.0
+      },
+      "accuracy": 0.7803418803418803,
+      "macro avg": {
+        "precision": 0.6574195030777338,
+        "recall": 0.6342866356961554,
+        "f1-score": 0.6448338123640195,
+        "support": 1170.0
+      },
+      "weighted avg": {
+        "precision": 0.7757128038856352,
+        "recall": 0.7803418803418803,
+        "f1-score": 0.7777704801448625,
+        "support": 1170.0
+      }
+    },
+    "confusion_matrix": [
+      [
+        708,
+        84,
+        10
+      ],
+      [
+        105,
+        175,
+        19
+      ],
+      [
+        6,
+        33,
+        30
+      ]
+    ]
+  },
+  "hyperparameters": {
+    "model": "TF-IDF + Logistic Regression",
+    "labels": [
+      "Low",
+      "Medium",
+      "High"
+    ],
+    "C": 8.0,
+    "class_weight": "balanced",
+    "ngram_range": [
+      1,
+      2
+    ],
+    "max_features": 30000,
+    "min_df": 2,
+    "char_ngrams": false,
+    "vocabulary_size": 30000,
+    "train_size": 5346,
+    "val_size": 1170,
+    "test_size": 1158,
+    "random_seed": 42,
+    "training_time_seconds": 3.3,
+    "test_macro_f1": 0.6351
+  },
+  "split_info": {
+    "within_split_duplicates_removed": {
+      "train": 712,
+      "val": 136,
+      "test": 144
+    },
+    "cross_split_duplicates_removed": {
+      "val": 11,
+      "test": 6
+    },
+    "contract_overlap": {
+      "train_val": 0,
+      "train_test": 0,
+      "val_test": 0
+    },
+    "sizes": {
+      "train": 5346,
+      "val": 1170,
+      "test": 1158
+    }
+  }
+}

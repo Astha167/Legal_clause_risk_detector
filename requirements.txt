@@ -12,6 +12,7 @@ transformers>=4.40
 scikit-learn>=1.3
 joblib>=1.3
 spacy>=3.7,<4.0
+en_core_web_sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.8.0/en_core_web_sm-3.8.0-py3-none-any.whl
 nltk>=3.8
 shap>=0.44
 pymupdf>=1.24

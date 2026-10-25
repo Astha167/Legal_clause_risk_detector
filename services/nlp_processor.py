@@ -54,17 +54,25 @@ def get_nlp():
         nlp = spacy.load("en_core_web_sm")
         _NLP_STATUS.update(model="en_core_web_sm", full_pipeline=True, message="")
     except OSError:
-        log.warning("spaCy model en_core_web_sm not found; using blank English pipeline.")
-        nlp = spacy.blank("en")
-        nlp.add_pipe("sentencizer")
-        _NLP_STATUS.update(
-            model="blank:en",
-            full_pipeline=False,
-            message=(
-                "spaCy model 'en_core_web_sm' is not installed, so POS tags, entities and "
-                "lemmas are unavailable. Run: python -m spacy download en_core_web_sm"
-            ),
-        )
+        try:
+            import spacy.cli
+
+            log.info("Downloading spaCy model en_core_web_sm...")
+            spacy.cli.download("en_core_web_sm")
+            nlp = spacy.load("en_core_web_sm")
+            _NLP_STATUS.update(model="en_core_web_sm", full_pipeline=True, message="")
+        except Exception as exc:
+            log.warning("spaCy model en_core_web_sm could not be downloaded (%s); using blank English pipeline.", exc)
+            nlp = spacy.blank("en")
+            nlp.add_pipe("sentencizer")
+            _NLP_STATUS.update(
+                model="blank:en",
+                full_pipeline=False,
+                message=(
+                    "spaCy model 'en_core_web_sm' is not installed, so POS tags, entities and "
+                    "lemmas are unavailable. Run: python -m spacy download en_core_web_sm"
+                ),
+            )
     nlp.max_length = max(nlp.max_length, 2_000_000)
     return nlp
 

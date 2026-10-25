@@ -10,9 +10,9 @@ logs/
 .env.*
 secrets.toml
 .streamlit/secrets.toml
-# trained transformer weights are large - regenerate locally
-model/contracts_bert_risk/*
-!model/contracts_bert_risk/.gitkeep
+# trained transformer weights are large - downloaded from release assets
+model/contracts_bert_risk/*.safetensors
+model/contracts_bert_risk/*.bin
 model/_smoke_test/
 reports/model_evaluation/archive/
 reports/model_evaluation/smoke_test/

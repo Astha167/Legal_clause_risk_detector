@@ -49,9 +49,35 @@ def risk_score_from_probs(probs: Dict[str, float]) -> float:
     return round(100.0 * sum(config.RISK_SCORE_WEIGHTS[l] * float(probs.get(l, 0.0)) for l in config.LABELS), 1)
 
 
+BERT_WEIGHTS_RELEASE_URL = "https://github.com/Astha167/Legal_clause_risk_detector/releases/download/v1.0.0/model.safetensors"
+
+
+def ensure_bert_weights(model_dir: Path) -> None:
+    """Download model.safetensors from GitHub Release if not present locally."""
+    model_dir = Path(model_dir)
+    weights_path = model_dir / "model.safetensors"
+    if weights_path.exists() and weights_path.stat().st_size > 1_000_000:
+        return
+
+    import urllib.request
+    log.info("Downloading Contracts-BERT model weights from %s ...", BERT_WEIGHTS_RELEASE_URL)
+    model_dir.mkdir(parents=True, exist_ok=True)
+    temp_path = model_dir / "model.safetensors.download"
+    try:
+        urllib.request.urlretrieve(BERT_WEIGHTS_RELEASE_URL, temp_path)
+        temp_path.replace(weights_path)
+        log.info("Contracts-BERT weights downloaded successfully.")
+    except Exception as e:
+        if temp_path.exists():
+            temp_path.unlink()
+        log.exception("Failed to download Contracts-BERT weights: %s", e)
+        raise
+
+
 def _bert_files_present(model_dir: Path) -> bool:
     has_weights = any((model_dir / f).exists() for f in ("model.safetensors", "pytorch_model.bin"))
-    return (model_dir / "config.json").exists() and has_weights
+    has_config = (model_dir / "config.json").exists()
+    return has_weights or has_config
 
 
 def _is_smoke(model_dir: Path) -> bool:
@@ -69,8 +95,11 @@ class BertRiskPredictor:
 
     def __init__(self, model_dir: Path = config.BERT_MODEL_DIR):
         model_dir = Path(model_dir)
-        if not _bert_files_present(model_dir):
+        if not (model_dir / "config.json").exists():
             raise ModelNotFoundError(config.MODEL_MISSING_MESSAGE)
+        has_weights = any((model_dir / f).exists() for f in ("model.safetensors", "pytorch_model.bin"))
+        if not has_weights:
+            ensure_bert_weights(model_dir)
         try:
             import torch
             from transformers import AutoModelForSequenceClassification, AutoTokenizer
